@@ -1,0 +1,1000 @@
+  798  exit
+  799  cd quantum-bloomberg/
+  800  ls
+  801  vi ibmquantum2
+  802  shutdown -h now
+  803  python
+  804  ls
+  805  # From your project directory
+  806  source mcp_env/bin/activate
+  807  which python
+  808  # Should point to something like /home/youruser/.../mcp_env/bin/python
+  809  python -m pip list
+  810  # Check that pandas, pyodbc, and mcp are installed
+  811  python
+  812  ls
+  813  python3 -m venv qenv
+  814  ls
+  815  python test_portfoliobloombergSurv.py 
+  816  ls
+  817  nano JPMStockDataScript.py
+  818  python JPMStockDataScript.py
+  819  ls
+  820  clear
+  821  ls
+  822  nano JPMStockDataScriptBI.py
+  823  python JPMStockDataScriptBI.py
+  824  python JPMStockDataScript.py
+  825  ls
+  826  nano DividendYieldProjection.py
+  827  python DividendYieldProjection.py
+  828  ls
+  829  nano jpm_feb2026.csv
+  830  nano DividendYieldProjection1.py
+  831  python DividendYieldProjection1.py
+  832  cat DividendYieldProjection1.py
+  833  nano OverallStrategy.py
+  834  python OverallStrategy.py
+  835  nano MultiStockChartProjection.py
+  836  python MultiStockChartProjection.py
+  837  nano MultiStockChartProjection2.py
+  838  python MultiStockChartProjection2.py
+  839  nano 8stocks.py
+  840  python 8stocks.py
+  841  cd ..
+  842  cd Oracle/
+  843  sudo apt install python3.11 python3.11-venv python3.11-dev
+  844  python3.11 -m venv ~/Oracle/myenv311
+  845  source ~/Oracle/myenv311/bin/activate
+  846  pip install --upgrade pip setuptools wheel
+  847  pip install cx_Oracle
+  848  sudo apt install python3.11 python3.11-venv python3.11-dev
+  849  sudo apt update
+  850  sudo apt install software-properties-common
+  851  sudo add-apt-repository ppa:deadsnakes/ppa
+  852  sudo apt update
+  853  sudo apt install python3.12 python3.12-venv python3.12-dev python3.12-distutils
+  854  python3 -m venv ~/Oracle/myenv
+  855  source ~/Oracle/myenv/bin/activate
+  856  pip install --upgrade pip setuptools wheel
+  857  pip install oracledb
+  858  python 
+  859  lsnrctl status
+  860  python
+  861  sudo su
+  862  python
+  863  python3 -m ensurepip --upgrade    # ensures pip is installed
+  864  python3 -m pip install --upgrade pip setuptools
+  865  clear
+  866  source mcp_env/bin/activate
+  867  python
+  868  import mcp.client
+  869  print(dir(mcp.client))
+  870  python
+  871  ls
+  872  nano bloomberg_mcp_server1.py 
+  873  python
+  874  nano bloomberg_mcp_server.py 
+  875  rm bloomberg_mcp_server.py 
+  876  nano bloomberg_mcp_server.py
+  877  python
+  878  ls
+  879  cat bloomberg_mcp_server.py 
+  880  python
+  881  ls
+  882  rm bloomberg_mcp_server.py 
+  883  nano bloomberg_mcp_server.py
+  884  python bloomberg_mcp_server.py
+  885  python
+  886  ls
+  887  cat bloomberg_mcp_server.py 
+  888  python
+  889  ls
+  890  cat bloomberg_mcp_server.py 
+  891  # Linux / macOS
+  892  source mcp_env/bin/activate
+  893  python
+  894  # Windows
+  895  mcp_env\Scripts\activate
+  896  python
+  897  pip install mcp
+  898  python 
+  899  python
+  900  sudo su
+  901  ls
+  902  cd quantum-bloomberg/
+  903  ls
+  904  vi ibmquantum2
+  905  apt install python3 python3-pip python3-venv build-essential -y
+  906  python3 -m venv qenv
+  907  source qenv/bin/activate
+  908  pip install --upgrade pip
+  909  python
+  910  ls
+  911  cd ..
+  912  mkdir github
+  913  cd github/
+  914  gitclone https://github.com/github/copilot-sdk.git
+  915  git clone https://github.com/github/copilot-sdk.git
+  916  ls
+  917  cd copilot-sdk/
+  918  ls
+  919  cd python  # if you plan to use Python for Nasdaq/Bloomberg analytics
+  920  ls
+  921  pip install -r requirements.txt
+  922  # Create a venv called 'venv'
+  923  python3 -m venv venv
+  924  # For bash/zsh
+  925  source venv/bin/activate
+  926  # Your prompt should now show (venv)
+  927  pip install --upgrade pip
+  928  pip install -r requirements.txt
+  929  nano requirements.txt
+  930  pip install -r requirements.txt
+  931  python -m pip install --index-url=https://blpapi.bloomberg.com/repository/releases/python/simple/ blpapi
+  932  python -c "import blpapi; print('blpapi installed successfully')"
+  933  pip install -r requirements.txt
+  934  pip install yfinance pandas matplotlib
+  935  ls
+  936  python example.py
+  937  nano example.py
+  938  python example.py
+  939  ls
+  940  cd ..
+  941  ls
+  942  cd python/
+  943  ls
+  944  python test_client.py 
+  945  cat test_client.py 
+  946  ls
+  947  cat example.py 
+  948  rm example.py 
+  949  nano example.py 
+  950  python3 -m venv venv
+  951  source venv/bin/activate
+  952  pip install --upgrade pip
+  953  pip install yfinance pandas
+  954  python example.py
+  955  nano example.py 
+  956  nano nasdaq.py 
+  957  python nasdaq.py 
+  958  cat nasdaq.py 
+  959  python example.py
+  960  nano nasdaq1.py
+  961  python nasdaq1.py
+  962  nano nasdaq2.py
+  963  python nasdaq2.py
+  964  nano nasdaq3.py
+  965  source venv/bin/activate
+  966  pip install yfinance pandas plotly
+  967  python nasdaq2.py
+  968  python nasdaq3.py
+  969  ls
+  970  nano nasdaq4.py
+  971  python nasdaq4.py
+  972  nano nasdaq5.py
+  973  python nasdaq5.py
+  974  source venv/bin/activate
+  975  pip install --upgrade kaleido
+  976  python -c "import kaleido; print('Kaleido installed')"
+  977  python nasdaq5.py
+  978  nano nasdaq6.py
+  979  python nasdaq6.py
+  980  source venv/bin/activate
+  981  pip install yfinance pandas plotly
+  982  python nasdaq6.py
+  983  nano nasdaq7.py
+  984  python nasdaq7.py
+  985  nano nasdaq8.py
+  986  python  nasdaq8.py
+  987  nano ndx_data.py
+  988  python ndx_data.py
+  989  python3 -m venv venv
+  990  source venv/bin/activate
+  991  pip install yfinance pandas plotly
+  992  nano ndx_data1.py
+  993  python ndx_data1.py
+  994  ls
+  995  history
+  996  history > history.txt
+  997  ls
+  998  cat history.txt 
+  999  shutdown -h now
+ 1000  ls
+ 1001  cd github/
+ 1002  ls
+ 1003  cd copilot-sdk/
+ 1004  ls
+ 1005  vi README.md 
+ 1006  ls
+ 1007  cd python/
+ 1008  ls
+ 1009  source venv/bin/activate
+ 1010  ls
+ 1011  python ndx_yf.py
+ 1012  ls
+ 1013  python ndx_data1.py
+ 1014  pip install yfinance pandas plotly
+ 1015  python ndx_yf.py
+ 1016  ls
+ 1017  python ndx_data1.py 
+ 1018  nano wfc_analysis.py
+ 1019  python3 -m venv venv
+ 1020  source venv/bin/activate
+ 1021  pip install yfinance pandas plotly
+ 1022  python wfc_analysis.py
+ 1023  nano finance_bi.py
+ 1024  python3 -m venv venv
+ 1025  source venv/bin/activate
+ 1026  pip install yfinance pandas odfpy
+ 1027  python finance_bi.py
+ 1028  ls
+ 1029  python finance_bi.py
+ 1030  source venv/bin/activate
+ 1031  pip install odfpy --upgrade
+ 1032  python 
+ 1033  python -c "import odf; print('odfpy installed')"
+ 1034  source venv/bin/activate
+ 1035  nano finance1_bi.py
+ 1036  python finance1_bi.py
+ 1037  ls
+ 1038  cat finance1_bi.py
+ 1039  ls
+ 1040  nano wfc_projection.py
+ 1041  python wfc_projection.py
+ 1042  python 
+ 1043  pip install scikit-learn
+ 1044  source venv/bin/activate
+ 1045  pip install scikit-learn
+ 1046  python wfc_projection.py
+ 1047  nano wfc_projection_graph.py
+ 1048  python wfc_projection_graph.py
+ 1049  sudo apt update
+ 1050  sudo apt install chromium-browser
+ 1051  python wfc_projection_graph.py
+ 1052  pip install plotly-orca
+ 1053  ls -l github/copilot-sdk/python/wfc_chart.html
+ 1054  source venv/bin/activate   # if using virtualenv
+ 1055  python wfc_projection_graph.py
+ 1056  source venv/bin/activate
+ 1057  python wfc_projection_graph.py
+ 1058  ls
+ 1059  chmod 777 wfc_chart.html 
+ 1060  ls -l github/copilot-sdk/python/wfc_chart.html
+ 1061  python wfc_projection_graph.py
+ 1062  pip install yfinance pandas numpy matplotlib ta
+ 1063  nano FullScript.py
+ 1064  python FullScript.py
+ 1065  nano FullScript1.py
+ 1066  python FullScript1.py
+ 1067  pip install yfinance pandas numpy matplotlib ta streamlit tensorflow scikit-learn
+ 1068  mkdir -p project && cd project && touch app.py quant_engine.py lstm_model.py
+ 1069  ls
+ 1070  python3 -m venv venv && source venv/bin/activate
+ 1071  ls
+ 1072  nano app.py 
+ 1073  nano lstm_model.py 
+ 1074  nano quant_engine.py 
+ 1075  la
+ 1076  nano quant_engine.py
+ 1077  nano lstm_model.py
+ 1078  nano app.py
+ 1079  source venv/bin/activate
+ 1080  streamlit run app.py
+ 1081  source venv/bin/activate
+ 1082  pip install streamlit
+ 1083  pip install streamlit pandas numpy matplotlib scikit-learn tensorflow yfinance
+ 1084  streamlit run app.py
+ 1085  ls
+ 1086  nano lstm_model.py
+ 1087  nano lstm_model1.py
+ 1088  nano app1.py
+ 1089  streamlit run app1.py
+ 1090  streamlit run app.py
+ 1091  nano lstm_model.py
+ 1092  nano app.py
+ 1093  streamlit run app.py
+ 1094  ls
+ 1095  nano app.py 
+ 1096  nano lstm_model.py
+ 1097  streamlit run app.py
+ 1098  ls
+ 1099  cd ..
+ 1100  mkdir project1
+ 1101  cd project1
+ 1102  ls
+ 1103  pip install yfinance pandas numpy matplotlib ta streamlit tensorflow scikit-learn
+ 1104  mkdir -p project && cd project && touch app.py quant_engine.py lstm_model.py
+ 1105  ls
+ 1106  nano quant_engine.py
+ 1107  nano lstm_model.py
+ 1108  nano app.py
+ 1109  streamlit run app.py
+ 1110  cd ..
+ 1111  mkdir quant_project/
+ 1112  cd quant_project/
+ 1113  pip install yfinance pandas numpy matplotlib ta streamlit tensorflow scikit-learn
+ 1114  python -m venv venv
+ 1115  source venv/bin/activate        # Linux / Mac
+ 1116  venv\Scripts\activate           # Windows
+ 1117  source venv/bin/activate  
+ 1118  nano test_download.py
+ 1119  python test_download.py
+ 1120  which python
+ 1121  python --version
+ 1122  python -m pip install yfinance
+ 1123  python -m pip show yfinance
+ 1124  python
+ 1125  source venv/bin/activate
+ 1126  python test_download.py
+ 1127  nano quant_engine.py
+ 1128  python test_engine.py
+ 1129  python test_download.py
+ 1130  nano test_engine.py
+ 1131  python test_engine.py
+ 1132  nano quant_engine.py
+ 1133  python test_engine.py
+ 1134  nano quant_engine.py
+ 1135  nano test_pipeline.py
+ 1136  python test_pipeline.py
+ 1137  python -m pip install ta
+ 1138  python -m pip show ta
+ 1139  python test_pipeline.py
+ 1140  nano lstm_model.py
+ 1141  ls
+ 1142  nano test_plot.py
+ 1143  python test_plot.py
+ 1144  python -m pip install matplotlib
+ 1145  python test_plot.py
+ 1146  streamlit run app.py
+ 1147  ls
+ 1148  pip install matplotlib streamlit
+ 1149  python - <<EOF
+ 1150  import matplotlib
+ 1151  import streamlit
+ 1152  print("All good")
+ 1153  EOF
+ 1154  python test_plot.py
+ 1155  streamlit run app.py
+ 1156  nano app.py
+ 1157  streamlit run app.py
+ 1158  python -m streamlit run app.py
+ 1159  nano quant_engine.py
+ 1160  streamlit run app.py
+ 1161  ls
+ 1162  sudo apt install chromium-browser
+ 1163  ls -l github/copilot-sdk/python/wfc_chart.html
+ 1164  # Install Google Chrome (system-wide)
+ 1165  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+ 1166  sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+ 1167  sudo apt update
+ 1168  sudo apt install google-chrome-stable
+ 1169  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+ 1170  sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+ 1171  sudo apt update
+ 1172  sudo apt install google-chrome-stable
+ 1173  sudo nano /etc/apt/sources.list.d/google-chrome.list
+ 1174  sudo apt update
+ 1175  wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-linux-signing-key.gpg
+ 1176  sudo nano /etc/apt/sources.list.d/google-chrome.list
+ 1177  sudo apt update
+ 1178  sudo apt install google-chrome-stable
+ 1179  which google-chrome
+ 1180  google-chrome --version
+ 1181  ls
+ 1182  mkdir quant_project/
+ 1183  cd quant_project/
+ 1184  ls
+ 1185  pip install yfinance pandas numpy matplotlib ta streamlit tensorflow scikit-learn
+ 1186  python -m venv venv
+ 1187  source venv/bin/activate        # Linux / Mac
+ 1188  venv\Scripts\activate           # Windows
+ 1189  python -m venv venv
+ 1190  cd ..
+ 1191  shutdown -h now
+ 1192  ls
+ 1193  cd quantum-bloomberg/
+ 1194  ls
+ 1195  vi ibmquantum2
+ 1196  cd ..
+ 1197  cd db2/
+ 1198  ls
+ 1199  nano 
+ 1200  nano bloomberg_db2.sql
+ 1201  ls
+ 1202  vi bloomberg_db2.sql 
+ 1203  vi bloombergExec_db2.sql 
+ 1204  apt install usb-creator-gtk
+ 1205  shutdown -h now
+ 1206  ls
+ 1207  vi db2.history 
+ 1208  docker ps
+ 1209  docker exec -it db2server bash
+ 1210  su - db2inst1
+ 1211  docker ps
+ 1212  docker exec -it db2server bash
+ 1213  docker ps -a
+ 1214  docker logs db2server
+ 1215  free -h
+ 1216  docker logs db2server
+ 1217  db2start
+ 1218  docker stop db2server
+ 1219  docker rm db2server
+ 1220  docker run -itd   --name db2server   --memory="5g"   --privileged=true   -p 50000:50000   -e LICENSE=accept   -e DB2INST1_PASSWORD=password   -e DBNAME=SAMPLE   icr.io/db2_community/db2
+ 1221  docker ps
+ 1222  docker exec -it db2server bash
+ 1223  python3 -m venv qenv source qenv/bin/activate
+ 1224  source qenv/bin/activate
+ 1225  ls\
+ 1226  ls
+ 1227  pip install qiskit numpy
+ 1228  pip install qiskit-ibm-runtime
+ 1229  nano import numpy as np
+ 1230  from qiskit import QuantumCircuit
+ 1231  from qiskit_aer import AerSimulator
+ 1232  from qiskit.visualization import plot_histogram
+ 1233  from qiskit import transpile
+ 1234  # -----------------------------
+ 1235  # CLASSICAL MARKET INPUTS
+ 1236  # -----------------------------
+ 1237  momentum = 0.65      # Example normalized signal (0 → 1)
+ 1238  volatility = 0.30
+ 1239  macro = 0.55
+ 1240  # Convert to rotation angles
+ 1241  theta_momentum = momentum * np.pi
+ 1242  theta_volatility = volatility * np.pi
+ 1243  theta_macro = macro * np.pi
+ 1244  # -----------------------------
+ 1245  # QUANTUM CIRCUIT
+ 1246  # -----------------------------
+ 1247  qc = QuantumCircuit(3, 3)
+ 1248  # Encode features into qubits
+ 1249  qc.ry(theta_momentum, 0)
+ 1250  qc.ry(theta_volatility, 1)
+ 1251  qc.ry(theta_macro, 2)
+ 1252  # Entanglement → interaction between factors
+ 1253  qc.cx(0, 1)
+ 1254  qc.cx(1, 2)
+ 1255  # Measurement
+ 1256  qc.measure([0, 1, 2], [0, 1, 2])
+ 1257  print(qc.draw())
+ 1258  # -----------------------------
+ 1259  # SIMULATION
+ 1260  # -----------------------------
+ 1261  simulator = AerSimulator()
+ 1262  compiled_circuit = transpile(qc, simulator)
+ 1263  job = simulator.run(compiled_circuit, shots=2000)
+ 1264  result = job.result()
+ 1265  counts = result.get_counts()
+ 1266  print("\nProbabilities:")
+ 1267  total = sum(counts.values())
+ 1268  for state, count in counts.items():
+ 1269  clear
+ 1270  ls
+ 1271  nano IBMQuantumPython.py
+ 1272  python IBMQuantumPython.py
+ 1273  python IBMQuantumPython1.py
+ 1274  nano IBMQuantumPython1.py
+ 1275  python IBMQuantumPython1.py
+ 1276  pip install streamlit plotly
+ 1277  nano app.py
+ 1278  streamlit run app.py
+ 1279  pip install streamlit plotly qiskit qiskit-aer
+ 1280  nano app1.py
+ 1281  streamlit run app1.py
+ 1282  ls
+ 1283  lsb_release -a
+ 1284  sudo apt update
+ 1285  sudo apt install -y wget apt-transport-https
+ 1286  wget https://packages.microsoft.com/config/ubuntu/25.10/packages-microsoft-prod.deb
+ 1287  sudo dpkg -i packages-microsoft-prod.deb
+ 1288  sudo apt update
+ 1289  sudo apt install -y dotnet-sdk-8.0
+ 1290  dotnet --version
+ 1291  sudo apt install -y dotnet-runtime-8.0
+ 1292  dotnet new web -n TestApp
+ 1293  cd TestApp
+ 1294  dotnet run
+ 1295  cd ..
+ 1296  dotnet new webapi -n FinanceApi
+ 1297  cd FinanceApi
+ 1298  dotnet run
+ 1299  ls
+ 1300  dotnet run
+ 1301  ls
+ 1302  cat FinanceApi.csproj 
+ 1303  ls
+ 1304  cd ..
+ 1305  ld
+ 1306  ls
+ 1307  mkdir ~/finance
+ 1308  cd ~/finance
+ 1309  dotnet new webapi -n FinanceApi
+ 1310  cd FinanceApi
+ 1311  dotnet run
+ 1312  ls
+ 1313  mkdir Controllers Services Models Data Calculations Integrations
+ 1314  ls
+ 1315  nano Models/PriceBar.cs
+ 1316  nano Calculations/MovingAverageCalculator.cs
+ 1317  nano Services/AnalyticsService.cs
+ 1318  nano Controllers/AnalyticsController.cs
+ 1319  nano Program.cs
+ 1320  dotnet clean
+ 1321  dotnet build
+ 1322  dotnet run
+ 1323  ls
+ 1324  cd ..
+ 1325  ls
+ 1326  mkdir JPMorgan
+ 1327  cd JPMorgan/
+ 1328  ls
+ 1329  touch Calculations/MovingAverageCalculator.cs
+ 1330  touch Calculations/ReturnsCalculator.cs
+ 1331  touch Calculations/VolatilityCalculator.cs
+ 1332  touch Calculations/IndexCalculator.cs
+ 1333  touch Services/AnalyticsService.cs
+ 1334  touch Controllers/AnalyticsController.cs
+ 1335  ls
+ 1336  cd ..
+ 1337  ls
+ 1338  cd JPMorgan/
+ 1339  nano Calculations/IndexCalculator.cs
+ 1340  ls
+ 1341  mkdir -p Controllers Services Models Data Calculations Integrations
+ 1342  ls
+ 1343  nano Calculations/IndexCalculator.cs
+ 1344  nano Calculations/ReturnsCalculator.cs
+ 1345  nano Calculations/VolatilityCalculator.cs
+ 1346  nano Calculations/MovingAverageCalculator.cs
+ 1347  nano Services/AnalyticsService.cs
+ 1348  nano Controllers/AnalyticsController.cs
+ 1349  nano Program.cs
+ 1350  dotnet run
+ 1351  ls
+ 1352  dotnet new webapi
+ 1353  ls
+ 1354  cd ..
+ 1355  ls
+ 1356  cd FinanceApi/
+ 1357  ls
+ 1358  cd ..
+ 1359  cd  JPMorgan/
+ 1360  ls
+ 1361  dotnet new webapi --force
+ 1362  ls
+ 1363  nano Controllers/AnalyticsController.cs
+ 1364  nano Program.cs
+ 1365  dotnet run
+ 1366  ls
+ 1367  cd /root/finance/JPMorgan
+ 1368  ls
+ 1369  npx create-react-app finance-dashboard
+ 1370  apt install npm
+ 1371  npx create-react-app finance-dashboard
+ 1372  cd finance-dashboard/
+ 1373  npm start
+ 1374  \
+ 1375  ls
+ 1376  mkdir -p quantum-bloomberg-db2/{db2,python,streamlit}
+ 1377  cd quantum-bloomberg-db2
+ 1378  touch README.md requirements.txt
+ 1379  touch db2/01_create_market_data.sql
+ 1380  touch db2/02_insert_sample_data.sql
+ 1381  touch db2/03_quantum_features_view.sql
+ 1382  touch python/db2_pull_features.py
+ 1383  touch python/quantum_circuit.py
+ 1384  touch python/regime_engine.py
+ 1385  touch streamlit/dashboard.py
+ 1386  nano db2/01_create_market_data.sql
+ 1387  nano db2/02_insert_sample_data.sql
+ 1388  nano db2/03_quantum_features_view.sql
+ 1389  nano requirements.txt
+ 1390  nano python/db2_pull_features.py
+ 1391  nano python/quantum_circuit.py
+ 1392  nano python/regime_engine.py
+ 1393  nano README.md
+ 1394  nano python/regime_engine.py
+ 1395  git init
+ 1396  pwd
+ 1397  git add .
+ 1398  git commit -m "Initial DB2 Quantum Pipeline"
+ 1399  git branch -M main
+ 1400  git remote add origin https://github.com/lauro_beck@hotmail.com/quantum-bloomberg-db2.git
+ 1401  git push -u origin main
+ 1402  nano README.md
+ 1403  tree
+ 1404  apt install tre
+ 1405  apt install tree
+ 1406  tree
+ 1407  git status
+ 1408  git add .
+ 1409  git commit -m "Initial DB2 Quantum Pipeline Structure"
+ 1410  git config --global user.name "Lauro Beck"
+ 1411  git add .
+ 1412  git commit -m "Initial DB2 Quantum Pipeline Structure"
+ 1413  git config --global user.name "Lauro Beck"
+ 1414  git config --global user.email "laurobeck@users.noreply.github.com"
+ 1415  git add .
+ 1416  git commit -m "Initial DB2 Quantum Pipeline Structure"
+ 1417  git remote add origin https://github.com/LauroBeck/db2-quantum-pipeline.git
+ 1418  git push -u origin main
+ 1419  git remote -v
+ 1420  https://github.com/lauro_beck@hotmail.com/quantum-bloomberg-db2.git
+ 1421  git remote remove origin
+ 1422  git remote -v
+ 1423  git remote add origin https://github.com/LauroBeck/db2-quantum-pipeline.git
+ 1424  git remote -v
+ 1425  git push -u origin main
+ 1426  git pull --rebase origin main
+ 1427  nano README.md
+ 1428  git add README.md
+ 1429  git rebase --continue
+ 1430  git push -u origin main
+ 1431  git status
+ 1432  ls
+ 1433  vi README.md 
+ 1434  ls
+ 1435  cd /root/finance/JPMorgan
+ 1436  ls
+ 1437  cd finance-dashboard/
+ 1438  ls
+ 1439  nano src/App.js
+ 1440  cd /root/finance/JPMorgan/FinanceApi
+ 1441  nano Program.cs
+ 1442  ls
+ 1443  nano Program.cs
+ 1444  pwd
+ 1445  ls
+ 1446  npm start
+ 1447  pwd
+ 1448  ls
+ 1449  git add .
+ 1450  git commit -m "Initial commit for React frontend"
+ 1451  git push origin main
+ 1452  cd ..
+ 1453  pwd
+ 1454  ls
+ 1455  cd finance-dashboard/
+ 1456  cd finance-dashboard
+ 1457  git add .
+ 1458  git commit -m "Initial commit for React frontend"
+ 1459  git push origin main
+ 1460  cd ..
+ 1461  pwd
+ 1462  ls
+ 1463  cd finance-dashboard/
+ 1464  ls
+ 1465  git add .
+ 1466  git commit -m "Initial commit for React frontend"
+ 1467  git push origin main
+ 1468  git branch
+ 1469  git push -u origin master
+ 1470  # Remove submodule reference (if exists)
+ 1471  git rm --cached finance-dashboard
+ 1472  # Keep the files
+ 1473  # Check current status
+ 1474  git status
+ 1475  git remote -v
+ 1476  git remote add origin https://github.com/LauroBeck/finance-dashboard-fullstack.git
+ 1477  git branch -M main
+ 1478  git push -u origin main
+ 1479  git push origin main
+ 1480  shutdown -h now 
+ 1481  cd /root/finance/JPMorgan/FinanceApi
+ 1482  nano Program.cs
+ 1483  cd /root/finance/JPMorgan/FinanceApi
+ 1484  ls
+ 1485  cd FinanceApi/
+ 1486  ls
+ 1487  cd ~/finance/JPMorgan/finance-dashboard# 
+ 1488  ls
+ 1489  cd ~/finance/JPMorgan/finance-dashboard
+ 1490  ls
+ 1491  cd ..
+ 1492  ls
+ 1493  dotnet run
+ 1494  ls
+ 1495  cd /root/finance/JPMorgan/FinanceApi
+ 1496  ls
+ 1497  nano Program.cs
+ 1498  namespace JPMorgan.Calculations
+ 1499  namespace JPMorgan.Services
+ 1500  namespace JPMorgan.Controllers
+ 1501  nano Calculations/IndexCalculator.cs
+ 1502  dotnet run
+ 1503  ls
+ 1504  rm WeatherForecast.cs
+ 1505  find . -name "*Program*.cs"
+ 1506  rm finance-dashboard/Program.cs
+ 1507  find . -name "Program.cs"
+ 1508  dotnet clean
+ 1509  dotnet build
+ 1510  dotnet run
+ 1511  ls
+ 1512  cd finance-dashboard/
+ 1513  ls
+ 1514  cd ..
+ 1515  ls
+ 1516  nano JPMorgan.csproj
+ 1517  dotnet run
+ 1518  ls
+ 1519  nano Services/AnalyticsService.cs
+ 1520  ls
+ 1521  cd Calculations/
+ 1522  ls
+ 1523  nano IndexCalculator.cs 
+ 1524  nano Calculations/ReturnsCalculator.cs
+ 1525  cd ..
+ 1526  ls
+ 1527  nano Calculations/ReturnsCalculator.cs
+ 1528  nano VolatilityCalculator.cs
+ 1529  nano MovingAverageCalculator.cs
+ 1530  cd CA
+ 1531  cd Calculations/
+ 1532  ls
+ 1533  cd ..
+ 1534  ls
+ 1535  dotnet clean
+ 1536  dotnet build
+ 1537  nano ReturnsCalculator.cs
+ 1538  dotnet clean
+ 1539  dotnet build
+ 1540  ls
+ 1541  cd Calculations/
+ 1542  ls
+ 1543  vi IndexCalculator.cs 
+ 1544  nano IndexCalculator.cs 
+ 1545  nano ReturnsCalculator.cs
+ 1546  nano VolatilityCalculator.cs
+ 1547  nano MovingAverageCalculator.cs
+ 1548  dotnet clean
+ 1549  dotnet build
+ 1550  cd ..
+ 1551  dotnet clean
+ 1552  dotnet build
+ 1553  nano Calculations/ReturnsCalculator.cs
+ 1554  dotnet clean
+ 1555  dotnet build JPMorgan.csproj
+ 1556  nano Controllers/AnalyticsController.cs
+ 1557  ls
+ 1558  cd Services/
+ 1559  ls
+ 1560  nano AnalyticsService.cs 
+ 1561  cd ..
+ 1562  dotnet clean JPMorgan.csproj
+ 1563  dotnet build JPMorgan.csproj
+ 1564  ls *.cs
+ 1565  rm MovingAverageCalculator.cs
+ 1566  rm ReturnsCalculator.cs
+ 1567  rm VolatilityCalculator.cs
+ 1568  ls *.cs
+ 1569  cd Calculations/
+ 1570  ls Calculations/
+ 1571  ls
+ 1572  mv IndexCalculator.cs Calculations/
+ 1573  mv MovingAverageCalculator.cs Calculations/
+ 1574  mv ReturnsCalculator.cs Calculations/
+ 1575  mv VolatilityCalculator.cs Calculations/
+ 1576  cd ..
+ 1577  mv IndexCalculator.cs Calculations/
+ 1578  mv MovingAverageCalculator.cs Calculations/
+ 1579  mv ReturnsCalculator.cs Calculations/
+ 1580  mv VolatilityCalculator.cs Calculations/
+ 1581  dotnet clean JPMorgan.csproj
+ 1582  dotnet build JPMorgan.csproj
+ 1583  nano Services/AnalyticsService.cs
+ 1584  dotnet clean JPMorgan.csproj
+ 1585  dotnet build JPMorgan.csproj
+ 1586  dotnet run
+ 1587  pwd
+ 1588  ls
+ 1589  git init
+ 1590  nano .gitignore
+ 1591  ls
+ 1592  nano .gitignore
+ 1593  git add .gitignore
+ 1594  git commit -m "Add .gitignore for .NET and React"
+ 1595  git add .
+ 1596  git commit -m "Initial commit: API + React frontend"
+ 1597  git remote add origin https://github.com/LauroBeck/finance-dashboard-fullstack.git
+ 1598  git branch -M main
+ 1599  git push -u origin main
+ 1600  git add .
+ 1601  git commit -m "Initial commit: API + React frontend"
+ 1602  git remote add origin https://github.com/YourUsername/finance-dashboard-fullstack.git
+ 1603  git branch -M main
+ 1604  git push -u origin main
+ 1605  ls
+ 1606  git pull origin main --rebase
+ 1607  git push origin main
+ 1608  ls
+ 1609  cd ..
+ 1610  ls
+ 1611  cd ll
+ 1612  cd ..
+ 1613  ls
+ 1614  pwd
+ 1615  cd /
+ 1616  ls
+ 1617  cd home/
+ 1618  ls
+ 1619  cd laurobeck/
+ 1620  cd ..
+ 1621  cd db2data/
+ 1622  ls
+ 1623  cd backup/
+ 1624  ls
+ 1625  cd ..
+ 1626  ls
+ 1627  cd ..
+ 1628  ls
+ 1629  cd laurobeck/
+ 1630  ls
+ 1631  cd azure-quantum/
+ 1632  ls
+ 1633  mkdir scripts data images docs
+ 1634  # Python scripts
+ 1635  mv *.py scripts/
+ 1636  # JSON and TXT data files
+ 1637  mv *.json *.txt data/
+ 1638  # PNG images
+ 1639  mv *.png images/
+ 1640  nano README.md
+ 1641  ls
+ 1642  cd docs/
+ 1643  ls
+ 1644  cd ..
+ 1645  ls
+ 1646  cd data/
+ 1647  ls
+ 1648  vi azureQuantum.txt 
+ 1649  vi bloomberg_report.json 
+ 1650  cd ..
+ 1651  ls
+ 1652  vi im
+ 1653  cd import 
+ 1654  vi import 
+ 1655  ls
+ 1656  cd im
+ 1657  cd images/
+ 1658  ls
+ 1659  cd ..
+ 1660  ls
+ 1661  cd scripts/
+ 1662  ls
+ 1663  cd ..
+ 1664  ls
+ 1665  cd qenv/
+ 1666  ls
+ 1667  cd ..
+ 1668  ls
+ 1669  cd data/
+ 1670  ls
+ 1671  cd ..
+ 1672  ls
+ 1673  cd scripts/
+ 1674  ls
+ 1675  nano README.md
+ 1676  nano pip install -r requirements.txt
+ 1677  nano -r requirements.txt
+ 1678  nano  requirements.txt
+ 1679  ls
+ 1680  git init
+ 1681  git add .
+ 1682  git commit -m "Initial commit: Bloomberg Python analytics project"
+ 1683  git remote add origin https://github.com/LauroBeck/bloomberg-analytics.git
+ 1684  git branch -M main
+ 1685  git push -u origin main
+ 1686  git pull origin main --rebase
+ 1687  nano README.md
+ 1688  git add README.md
+ 1689  git rebase --continue
+ 1690  git push origin main
+ 1691  ls
+ 1692  cd quantum-bloomberg/
+ 1693  ls
+ 1694  vi ibmquantum2
+ 1695  cd /root/finance/JPMorgan/FinanceApi
+ 1696  ls
+ 1697  cd quantum-bloomberg/
+ 1698  ls
+ 1699  vi ibmquantum2
+ 1700  python3 -m venv qenv
+ 1701  source qenv/bin/activate
+ 1702  ls
+ 1703  nano IBMTRENDANALYSIS.py
+ 1704  python IBMTRENDANALYSIS.py
+ 1705  nano IBMTRENDANALYSIS.py
+ 1706  nano IBMTRENDANALYSIS1.py
+ 1707  python IBMTRENDANALYSIS1.py
+ 1708  pip install yfinance pandas numpy matplotlib seaborn scipy statsmodels
+ 1709  nano MASTERSCRIPT.py
+ 1710  python MASTERSCRIPT.py
+ 1711  nano MASTERSCRIPT1.py
+ 1712  python MASTERSCRIPT1.py
+ 1713  pip install numpy pandas matplotlib seaborn yfinance scipy
+ 1714  nano PORTFOLIO_ENGINE.py
+ 1715  python PORTFOLIO_ENGINE.py
+ 1716  nano PORTFOLIO_ENGINE.py
+ 1717  python PORTFOLIO_ENGINE.py
+ 1718  nano PORTFOLIO_ENGINE.py
+ 1719  python PORTFOLIO_ENGINE.py
+ 1720  nano PORTFOLIO_ENGINE.py
+ 1721  python PORTFOLIO_ENGINE.py
+ 1722  nano PROFESSIONALPORTFOLIOENGINEv1.0.py
+ 1723  python PROFESSIONALPORTFOLIOENGINEv1.0.py
+ 1724  nano DUAL_PORTFOLIO_ENGINE.py
+ 1725  python DUAL_PORTFOLIO_ENGINE.py
+ 1726  nano DUALSTRATEGYPROFESSIONALPORTFOLIO.py
+ 1727  python DUALSTRATEGYPROFESSIONALPORTFOLIO.py
+ 1728  pip install --index-url=https://blpapi.bloomberg.com/repository/releases/python/simple blpapi
+ 1729  pip install xbbg
+ 1730  nano bloomberg.py
+ 1731  python bloomberg.py
+ 1732  nano bloombergYahoo.py
+ 1733  python bloombergYahoo.py
+ 1734  nano FGKFXTechnologyPortfolioEngine.py
+ 1735  python FGKFXTechnologyPortfolioEngine.py
+ 1736  shutdown -h now
+ 1737  ls /run/systemd/shutdown/
+ 1738  ps aux | grep shutdown | grep -v grep
+ 1739  ps aux | grep "shutdown [0-9]"
+ 1740  nano /etc/apt/apt.conf.d/50unattended-upgrades
+ 1741  nano /etc/apt/apt.conf.d/20auto-upgrades
+ 1742  grep -r "APT::Periodic" /etc/apt/apt.conf.d/
+ 1743  sudo nano /etc/apt/apt.conf.d/10periodic
+ 1744  grep -r "APT::Periodic" /etc/apt/apt.conf.d/
+ 1745  shutdown -h now
+ 1746  ls
+ 1747  cd quantum-bloomberg/
+ 1748  ls
+ 1749  python3 -m venv qenv
+ 1750  source qenv/bin/activate
+ 1751  ls
+ 1752  nano PythonFrameworkMining.py
+ 1753  python PythonFrameworkMining.py
+ 1754  nano PythonFrameworkMining.py
+ 1755  python PythonFrameworkMining.py
+ 1756  nano streamlit_mining_dashboard.py
+ 1757  streamlit run streamlit_mining_dashboard.py
+ 1758  nano dividend_model.py
+ 1759  python3 dividend_model.py
+ 1760  nano dividend_modelBloombergAsia.py
+ 1761  python3 dividend_modelBloombergAsia.py
+ 1762  nano mining_model_v2.py
+ 1763  python3 mining_model_v2.py
+ 1764  shutdown -h now
+ 1765  cd quantum-bloomberg/
+ 1766  ls
+ 1767  python3 -m venv qenv
+ 1768  source qenv/bin/activate
+ 1769  ls
+ 1770  nano trackPrices.py
+ 1771  python trackPrices.py
+ 1772  nano trackPrices1.py
+ 1773  python trackPrices1.py
+ 1774  pip install yfinance pandas numpy streamlit statsmodels
+ 1775  nano streamlit_app.py
+ 1776  streamlit run streamlit_app.py
+ 1777  nano streamlit_app1.py
+ 1778  python streamlit_app1.py
+ 1779  streamlit run streamlit_app1.py
+ 1780  nano streamlit_app2.py
+ 1781  streamlit run streamlit_app2.py
+ 1782  nano streamlit_app3.py
+ 1783  streamlit run streamlit_app3.py
+ 1784  cat  streamlit_app3.py
+ 1785  nano streamlit_app4.py
+ 1786  streamlit run streamlit_app4.py
+ 1787  nano CNNBrasil.py
+ 1788  python CNNBrasil.py
+ 1789  python CNNBrasilPro.py
+ 1790  nano CNNBrasilPro.py
+ 1791  python CNNBrasilPro.py
+ 1792  nano bloombergtheChinaShow.py
+ 1793  streamlit run bloombergtheChinaShow.py 
+ 1794  nano bloombergtheChinaShow1.py
+ 1795  streamlit run bloombergtheChinaShow1.py 
+ 1796  cat bloombergtheChinaShow1.py 
+ 1797  history > history.txt

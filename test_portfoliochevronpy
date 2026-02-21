@@ -1,0 +1,109 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import yfinance as yf
+from sklearn.ensemble import RandomForestRegressor
+
+# ===============================
+# 1. DOWNLOAD DATA
+# ===============================
+
+tickers = {
+    "WTI": "CL=F",
+    "Brent": "BZ=F",
+    "DXY": "DX-Y.NYB",
+    "XOM": "XOM",
+    "CVX": "CVX"
+}
+
+data = {}
+
+for name, ticker in tickers.items():
+    df = yf.download(ticker, start="2015-01-01", progress=False)
+    data[name] = df["Close"]
+
+df = pd.concat(data.values(), axis=1, sort=False)
+df.columns = data.keys()
+df = df.dropna()
+
+# Remove non-positive values
+df = df[(df > 0).all(axis=1)]
+
+# ===============================
+# 2. FEATURE ENGINEERING
+# ===============================
+
+log_returns = np.log(df).diff()
+
+features = pd.DataFrame(index=df.index)
+
+# Commodity returns
+features["WTI_ret"] = log_returns["WTI"]
+features["Brent_ret"] = log_returns["Brent"]
+features["DXY_ret"] = log_returns["DXY"]
+
+# Equity returns (NEW)
+features["XOM_ret"] = log_returns["XOM"]
+features["CVX_ret"] = log_returns["CVX"]
+
+# Volatility
+features["WTI_vol_5"] = log_returns["WTI"].rolling(5).std()
+features["WTI_vol_20"] = log_returns["WTI"].rolling(20).std()
+
+# Target = next day's WTI
+features["target"] = df["WTI"].shift(-1)
+
+features = features.dropna()
+
+# ===============================
+# 3. TRAIN / TEST SPLIT
+# ===============================
+
+X = features.drop(columns="target")
+y = features["target"]
+
+split_index = int(len(X) * 0.8)
+
+X_train = X.iloc[:split_index]
+X_test = X.iloc[split_index:]
+
+y_train = y.iloc[:split_index]
+y_test = y.iloc[split_index:]
+
+# ===============================
+# 4. TRAIN MODEL
+# ===============================
+
+model = RandomForestRegressor(
+    n_estimators=400,
+    max_depth=10,
+    random_state=42
+)
+
+model.fit(X_train, y_train)
+
+# ===============================
+# 5. PREDICTION
+# ===============================
+
+y_pred = model.predict(X_test)
+
+X_last = X.iloc[[-1]]
+next_price_pred = float(model.predict(X_last)[0])
+last_price = float(df["WTI"].iloc[-1])
+
+print(f"Last WTI price: {last_price:.2f}")
+print(f"Predicted next WTI price: {next_price_pred:.2f}")
+
+# ===============================
+# 6. PLOT
+# ===============================
+
+plt.figure(figsize=(12, 6))
+plt.plot(y_test.index, y_test, label="Actual WTI")
+plt.plot(y_test.index, y_pred, label="Predicted WTI")
+plt.title("WTI Next-Day Prediction (With XOM & CVX Features)")
+plt.legend()
+plt.tight_layout()
+plt.savefig("wti_prediction_with_equities.png")
+plt.close()

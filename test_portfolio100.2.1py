@@ -1,0 +1,144 @@
+import sys
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import yfinance as yf
+
+# ===============================
+# 0. DEPENDENCY CHECK
+# ===============================
+try:
+    from sklearn.ensemble import RandomForestRegressor
+except ModuleNotFoundError:
+    print("ERROR: scikit-learn not installed")
+    print("Run: pip install scikit-learn")
+    sys.exit(1)
+
+# ===============================
+# 1. SAFE DOWNLOAD FUNCTION
+# ===============================
+def safe_download(symbol, start="2015-01-01"):
+    print(f"Downloading {symbol} ...")
+    df = yf.download(symbol, start=start, progress=False)
+
+    if df is None or df.empty:
+        raise RuntimeError(f"Download failed for {symbol}")
+
+    if "Close" not in df.columns:
+        raise RuntimeError(f"'Close' column missing for {symbol}")
+
+    return df["Close"]
+
+# ===============================
+# 2. DOWNLOAD DATA (WITH FALLBACK)
+# ===============================
+try:
+    wti = safe_download("CL=F")
+    brent = safe_download("BZ=F")
+
+    try:
+        dxy = safe_download("DX-Y.NYB")
+    except Exception:
+        print("DX-Y.NYB failed → using DX=F fallback")
+        dxy = safe_download("DX=F")
+
+except Exception as e:
+    print("DATA ERROR:", e)
+    sys.exit(1)
+
+# ===============================
+# 3. ALIGN & CLEAN DATA
+# ===============================
+df = pd.concat([wti, brent, dxy], axis=1)
+df.columns = ["WTI", "Brent", "DXY"]
+
+# Drop missing rows
+df.dropna(inplace=True)
+
+# Remove non-positive prices (log safety)
+df = df[(df > 0).all(axis=1)]
+
+if df.empty:
+    raise RuntimeError("DataFrame empty after cleaning")
+
+# ===============================
+# 4. FEATURE ENGINEERING
+# ===============================
+log_returns = np.log(df).diff()
+
+features = pd.DataFrame(index=df.index)
+
+# Returns
+features["WTI_ret"] = log_returns["WTI"]
+features["Brent_ret"] = log_returns["Brent"]
+features["DXY_ret"] = log_returns["DXY"]
+
+# Volatility
+features["WTI_vol_5"] = log_returns["WTI"].rolling(5).std()
+features["WTI_vol_20"] = log_returns["WTI"].rolling(20).std()
+
+# Target = next-day WTI price (NO leakage)
+features["target"] = df["WTI"].shift(-1)
+
+features.dropna(inplace=True)
+
+if features.empty:
+    raise RuntimeError("No features left after engineering")
+
+# ===============================
+# 5. TRAIN / TEST SPLIT (TIME SAFE)
+# ===============================
+X = features.drop(columns="target")
+y = features["target"]
+
+split = int(len(X) * 0.8)
+
+X_train = X.iloc[:split]
+X_test  = X.iloc[split:]
+y_train = y.iloc[:split]
+y_test  = y.iloc[split:]
+
+# ===============================
+# 6. MODEL TRAINING
+# ===============================
+model = RandomForestRegressor(
+    n_estimators=300,
+    max_depth=8,
+    random_state=42,
+    n_jobs=-1
+)
+
+model.fit(X_train, y_train)
+
+# ===============================
+# 7. PREDICTION
+# ===============================
+y_pred = model.predict(X_test)
+
+# Next-day forecast
+X_last = X.iloc[[-1]]           # keep DataFrame shape
+next_price_pred = float(model.predict(X_last)[0])
+
+last_price = df["WTI"].iloc[-1]
+if pd.isna(last_price):
+    raise RuntimeError("Last WTI price is NaN")
+
+last_price = float(last_price)
+
+print(f"Last WTI price: {last_price:.2f}")
+print(f"Predicted next WTI price: {next_price_pred:.2f}")
+
+# ===============================
+# 8. PLOT (HEADLESS SAFE)
+# ===============================
+plt.figure(figsize=(10, 5))
+plt.plot(y_test.index, y_test, label="Actual")
+plt.plot(y_test.index, y_pred, label="Predicted")
+plt.title("WTI Next-Day Price Prediction")
+plt.legend()
+plt.tight_layout()
+
+plt.savefig("wti_prediction.png")
+plt.close()
+
+print("Plot saved as wti_prediction.png")

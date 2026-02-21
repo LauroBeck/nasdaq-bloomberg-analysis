@@ -1,0 +1,69 @@
+# ============================================================
+# 4-Qubit Hubbard Dimer Quantum Simulation (Python 3.13)
+# Latest Qiskit packages compatible with Python 3.13
+# Fully compatible with AerSimulator local
+# ============================================================
+
+import numpy as np
+from qiskit_aer import AerSimulator
+from qiskit.quantum_info import SparsePauliOp
+from qiskit.circuit.library import EfficientSU2
+from qiskit.algorithms import VQE, NumPyMinimumEigensolver
+from qiskit.algorithms.optimizers import COBYLA
+
+# -----------------------------
+# Metal pair selection
+# -----------------------------
+metals_pair = "Pt-Pd"  # options: "Pt-Pd" or "Ru-Ir"
+
+hubbard_params = {
+    "Pt-Pd": {"t": 1.0, "U": 2.0},
+    "Ru-Ir": {"t": 1.2, "U": 2.5}
+}
+
+t = hubbard_params[metals_pair]["t"]
+U = hubbard_params[metals_pair]["U"]
+
+# -----------------------------
+# Define 4-qubit Hubbard Dimer Hamiltonian
+# -----------------------------
+# Basis: [n1_up, n1_down, n2_up, n2_down]
+ham = (
+    -0.5 * SparsePauliOp.from_list([("XXII", 1.0), ("YYII", 1.0)]) +
+    -0.5 * SparsePauliOp.from_list([("IIXX", 1.0), ("IIYY", 1.0)]) +
+    0.25 * U * SparsePauliOp.from_list([("ZZII", 1.0), ("IIZZ", 1.0)])
+)
+
+print(f"\nHamiltonian for {metals_pair}:\n{ham}")
+
+# -----------------------------
+# Exact diagonalization
+# -----------------------------
+exact_solver = NumPyMinimumEigensolver()
+exact_result = exact_solver.compute_minimum_eigenvalue(ham)
+print(f"\nExact ground state energy: {exact_result.eigenvalue.real:.6f}")
+
+# -----------------------------
+# VQE setup
+# -----------------------------
+ansatz = EfficientSU2(num_qubits=4, reps=2)  # works in latest Qiskit
+optimizer = COBYLA(maxiter=200)
+vqe_backend = AerSimulator()
+
+# -----------------------------
+# Run VQE
+# -----------------------------
+vqe = VQE(ansatz=ansatz, optimizer=optimizer, quantum_instance=vqe_backend)
+vqe_result = vqe.compute_minimum_eigenvalue(ham)
+print(f"VQE ground state energy: {vqe_result.eigenvalue.real:.6f}")
+
+# -----------------------------
+# Energy error and interpretation
+# -----------------------------
+energy_error = abs(vqe_result.eigenvalue.real - exact_result.eigenvalue.real)
+print(f"Energy error (VQE vs exact): {energy_error:.6f}")
+
+print("\n--- Conceptual Interpretation ---")
+print("Separate metals |0> state = unbonded d-orbitals")
+print("Bonded state |1> = correlated d-orbital occupation")
+print("Energy difference ~ bond formation strength")
